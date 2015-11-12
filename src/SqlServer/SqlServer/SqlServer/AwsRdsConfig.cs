@@ -1,7 +1,7 @@
 ﻿using System;
 using ServiceStack.Configuration;
 
-namespace Postgres
+namespace SqlServer
 {
     public class AwsRdsConfig
     {

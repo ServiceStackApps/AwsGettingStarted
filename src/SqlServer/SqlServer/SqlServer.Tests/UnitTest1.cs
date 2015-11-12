@@ -1,12 +1,12 @@
 ﻿using NUnit.Framework;
-using Postgres.ServiceInterface;
-using Postgres.ServiceModel;
-using Postgres.ServiceModel.Types;
+using SqlServer.ServiceInterface;
+using SqlServer.ServiceModel;
 using ServiceStack;
 using ServiceStack.Data;
 using ServiceStack.OrmLite;
+using SqlServer.ServiceModel.Types;
 
-namespace Postgres.Tests
+namespace SqlServer.Tests
 {
     [TestFixture]
     public class UnitTests
@@ -47,7 +47,7 @@ namespace Postgres.Tests
         {
             var service = appHost.Container.Resolve<CustomerService>();
 
-            var response = service.Get(new GetCustomer {Id = 1});
+            var response = service.Get(new GetCustomer { Id = 1 });
 
             Assert.That(response, Is.Not.Null);
             Assert.That(response.Result, Is.Not.Null);
@@ -59,12 +59,12 @@ namespace Postgres.Tests
         {
             var service = appHost.Container.Resolve<CustomerService>();
 
-            var response = service.Post(new CreateCustomer {Name = "World"});
+            var response = service.Post(new CreateCustomer { Name = "World" });
             Assert.That(response.Result, Is.Not.Null);
             Assert.That(response.Result.Id, Is.GreaterThan(0));
             Assert.That(response.Result.Name, Is.EqualTo("World"));
 
-            var validateResponse = service.Get(new GetCustomer {Id = response.Result.Id});
+            var validateResponse = service.Get(new GetCustomer { Id = response.Result.Id });
             Assert.That(validateResponse.Result, Is.Not.Null);
             Assert.That(validateResponse.Result.Id, Is.EqualTo(response.Result.Id));
             Assert.That(validateResponse.Result.Name, Is.EqualTo(response.Result.Name));
@@ -101,27 +101,27 @@ namespace Postgres.Tests
         {
             var service = appHost.Container.Resolve<CustomerService>();
 
-            var response = service.Post(new CreateCustomer {Name = "Delete me"});
+            var response = service.Post(new CreateCustomer { Name = "Delete me" });
             Assert.That(response.Result, Is.Not.Null);
             Assert.That(response.Result.Id, Is.GreaterThan(0));
             Assert.That(response.Result.Name, Is.EqualTo("Delete me"));
 
-            var createValidate = service.Get(new GetCustomer {Id = response.Result.Id});
+            var createValidate = service.Get(new GetCustomer { Id = response.Result.Id });
             Assert.That(createValidate.Result, Is.Not.Null);
             Assert.That(createValidate.Result.Id, Is.EqualTo(response.Result.Id));
             Assert.That(createValidate.Result.Name, Is.EqualTo("Delete me"));
 
-            service.Delete(new DeleteCustomer { Id = response.Result.Id});
+            service.Delete(new DeleteCustomer { Id = response.Result.Id });
 
             bool notFound = false;
             try
             {
-                service.Get(new GetCustomer {Id = response.Result.Id});
+                service.Get(new GetCustomer { Id = response.Result.Id });
             }
             catch (HttpError e)
             {
                 notFound = true;
-                Assert.That(e.Status,Is.EqualTo(404));
+                Assert.That(e.Status, Is.EqualTo(404));
             }
             Assert.That(notFound, Is.EqualTo(true));
         }
