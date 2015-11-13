@@ -9,13 +9,13 @@ namespace SqlServer
         {
             get
             {
-                var accessKey = ConfigUtils.GetNullableAppSetting("ConnectionString")
+                var connString = ConfigUtils.GetNullableAppSetting("ConnectionString")
                    ?? Environment.GetEnvironmentVariable("ConnectionString");
 
-                if (string.IsNullOrEmpty(accessKey))
+                if (string.IsNullOrEmpty(connString))
                     throw new ArgumentException("ConnectionString must be defined in App.config or Environment Variable");
 
-                return accessKey;
+                return connString;
             }
         }
     }
