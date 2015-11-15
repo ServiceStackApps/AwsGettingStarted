@@ -9,7 +9,7 @@ The guides for these Visual Studio solutions can be found in the [ServiceStack.A
 
 ## Amazon RDS
 - [PostgreSQL](#getting-started-with-aws-rds-postgresql-and-ormlite)
-- [Aurora](#getting-started-with-aws-aurora-postgresql-and-ormlite)
+- [Aurora](#getting-started-with-aws-rds-aurora-and-ormlite)
 - [MySQL](#getting-started-with-aws-rds-mysql-and-ormlite)
 - [MariaDB](#getting-started-with-aws-rds-mariadb-and-ormlite)
 - [SQL Server](#getting-started-with-aws-rds-sql-server-and-ormlite)
@@ -720,7 +720,8 @@ public class CustomerService : Service
 > }
 > ```
 
-## Getting started with AWS ElastiCache Memcached and ServiceStack
+## Getting started with AWS ElastiCache and ServiceStack
+### Memcached
 
 ![](https://github.com/ServiceStack/Assets/raw/master/img/aws/elasticache-memcached-powered-by-aws.png)
 
