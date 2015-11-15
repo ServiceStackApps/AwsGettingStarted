@@ -50,8 +50,8 @@ namespace Memcached
                 }
             }
 
-            //AWS ElastiCache servers are NOT accessible from outside AWS
-            //use MemoryCacheClient locally
+            // AWS ElastiCache servers are NOT accessible from outside AWS
+            // Use MemoryCacheClient locally
             if (AppSettings.GetString("Environment") == "Production")
             {
                 container.Register<ICacheClient>(c => new MemcachedClientCache(
