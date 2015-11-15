@@ -1,17 +1,26 @@
 ﻿using Funq;
 using ServiceStack;
-using Redis.ServiceInterface;
-using Redis.ServiceModel.Types;
+using Memcached.ServiceInterface;
+using Memcached.ServiceModel.Types;
 using ServiceStack.Caching;
+using ServiceStack.Caching.Memcached;
 using ServiceStack.Data;
 using ServiceStack.OrmLite;
 using ServiceStack.Redis;
 
-namespace Redis
+namespace Memcached
 {
     public class AppHost : AppSelfHostBase
     {
-        public AppHost() : base("AWS ElastiCache Example", typeof(MyServices).Assembly) { }
+        /// <summary>
+        /// Default constructor.
+        /// Base constructor requires a name and assembly to locate web service classes. 
+        /// </summary>
+        public AppHost()
+            : base("Memcached", typeof(MyServices).Assembly)
+        {
+
+        }
 
         public override void Configure(Container container)
         {
@@ -41,19 +50,12 @@ namespace Redis
                 }
             }
 
-            // AWS ElastiCache servers are NOT accessible from outside AWS
-            // Use MemoryCacheClient locally
+            //AWS ElastiCache servers are NOT accessible from outside AWS
+            //use MemoryCacheClient locally
             if (AppSettings.GetString("Environment") == "Production")
             {
-                container.Register<IRedisClientsManager>(c =>
-                    new PooledRedisClientManager(
-                        // Primary node from AWS (master)
-                        AwsElastiCacheConfig.MasterNodes,
-                        // Read replica nodes from AWS (slaves)
-                        AwsElastiCacheConfig.SlaveNodes));
-
-                container.Register<ICacheClient>(c =>
-                    container.Resolve<IRedisClientsManager>().GetCacheClient());
+                container.Register<ICacheClient>(c => new MemcachedClientCache(
+                    AwsElastiCacheConfig.MemcachedNodes));
             }
             else
             {
