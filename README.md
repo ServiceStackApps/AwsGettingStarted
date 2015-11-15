@@ -1,4 +1,4 @@
-# Getting started with AWS and ServiceStack
+# Getting started with AWS + ServiceStack
 ![](https://raw.githubusercontent.com/ServiceStack/Assets/5744efd80015870e6441cef6e8fd8bbc79044945/img/aws/servicestack-aws-banner.png)
 This repository contains Visual Studuio solutions for getting started with AWS and ServiceStack libraries.
 
