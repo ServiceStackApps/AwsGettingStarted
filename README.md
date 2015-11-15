@@ -2,10 +2,7 @@
 
 ![](https://raw.githubusercontent.com/ServiceStack/Assets/5744efd80015870e6441cef6e8fd8bbc79044945/img/aws/servicestack-aws-banner.png)
 
-This repository contains Visual Studio solutions for getting started with AWS and ServiceStack libraries.
-
-The guides for these Visual Studio solutions can be found in the [ServiceStack.Aws repository](https://github.com/ServiceStack/ServiceStack.Aws) [documentation folder](https://github.com/ServiceStack/ServiceStack.Aws/tree/master/docs) or by the links below.
-
+This repository contains Visual Studio solutions for getting started with AWS and ServiceStack libraries, as well as step by step guides to get you started below.
 
 ## Amazon RDS
 - [PostgreSQL](#getting-started-with-aws-rds-postgresql-and-ormlite)
