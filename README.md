@@ -8,15 +8,15 @@ The guides for these Visual Studio solutions can be found in the [ServiceStack.A
 
 
 ## Amazon RDS
-- [PostgreSQL](https://github.com/ServiceStack/ServiceStack.Aws/blob/master/docs/postgres-guide.md)
-- [Aurora](https://github.com/ServiceStack/ServiceStack.Aws/blob/master/docs/aurora-guide.md)
-- [MySQL](https://github.com/ServiceStack/ServiceStack.Aws/blob/master/docs/mysql-guide.md)
-- [MariaDB](https://github.com/ServiceStack/ServiceStack.Aws/blob/master/docs/mariadb-guide.md)
-- [SQL Server](https://github.com/ServiceStack/ServiceStack.Aws/blob/master/docs/mssql-guide.md)
+- [PostgreSQL](#getting-started-with-aws-rds-postgresql-and-ormlite)
+- [Aurora](#getting-started-with-aws-aurora-postgresql-and-ormlite)
+- [MySQL](#getting-started-with-aws-rds-mysql-and-ormlite)
+- [MariaDB](#getting-started-with-aws-rds-mariadb-and-ormlite)
+- [SQL Server](#getting-started-with-aws-rds-sql-server-and-ormlite)
 
 ## Amazon ElastiCache
-- [Redis](https://github.com/ServiceStack/ServiceStack.Aws/blob/master/docs/redis-guide.md)
-- [Memcached](https://github.com/ServiceStack/ServiceStack.Aws/blob/master/docs/memcached-guide.md)
+- [Redis](#getting-started-with-aws-elasticache-redis-and-servicestack)
+- [Memcached](#getting-started-with-aws-elasticache-memcached-and-servicestack)
 
 ## Getting Started with AWS RDS PostgreSQL and OrmLite
 
@@ -596,11 +596,9 @@ public class CustomerService : Service
 
 See the [OrmLite GitHub](https://github.com/ServiceStack/ServiceStack.OrmLite#api-examples) page for more info on working with OrmLite API.
 
-## Getting started with AWS ElastiCache and ServiceStack
+## Getting started with AWS ElastiCache Redis and ServiceStack
 
 ![](https://github.com/ServiceStack/Assets/raw/master/img/aws/elasticache-redis-powered-by-aws.png)
-
-### ServiceStack.Redis
 
 Amazon's 'ElastiCache' allows a simple way to create and manage cache instances that can be simply incorporated into your ServiceStack application stack using the ServiceStack Redis client, `ServiceStack.Redis`. 
 
@@ -722,11 +720,9 @@ public class CustomerService : Service
 > }
 > ```
 
-## Getting started with AWS ElastiCache and ServiceStack
+## Getting started with AWS ElastiCache Memcached and ServiceStack
 
 ![](https://github.com/ServiceStack/Assets/raw/master/img/aws/elasticache-memcached-powered-by-aws.png)
-
-### ServiceStack.Caching.Memcached
 
 Amazon's 'ElastiCache' allows a simple way to create and manage Memcached instances that can be simply incorporated into your ServiceStack application stack using the ServiceStack NuGet package, `ServiceStack.Caching.Memcached`. 
 
