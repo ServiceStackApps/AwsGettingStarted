@@ -16,7 +16,7 @@ The guides for these Visual Studio solutions can be found in the [ServiceStack.A
 
 ## Amazon ElastiCache
 - [Redis](#getting-started-with-aws-elasticache-redis-and-servicestack)
-- [Memcached](#getting-started-with-aws-elasticache-memcached-and-servicestack)
+- [Memcached](#getting-started-with-aws-elasticache-and-servicestack)
 
 ## Getting Started with AWS RDS PostgreSQL and OrmLite
 
