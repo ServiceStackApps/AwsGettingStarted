@@ -68,6 +68,8 @@ jobs:
     - name: Output CodeQL database
       uses: mario-campos/output-codeql-db@main
       id: output-codeql-db
+      with:
+        language: ${{ matrix.language }}
     - name: Upload CodeQL database  
       uses: actions/upload-artifact@v2
       with:
