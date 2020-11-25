@@ -7,6 +7,8 @@ using ServiceStack.DataAnnotations;
 
 namespace SqlServer.ServiceModel.Types
 {
+    [PostCreateTable("INSERT INTO Customer (Name) VALUES ('Foo');" +
+                     "INSERT INTO Customer (Name) VALUES ('Bar');")]
     public class Customer
     {
         [AutoIncrement]
