@@ -65,3 +65,11 @@ jobs:
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v1
+    - name: Output CodeQL database
+      uses: mario-campos/output-codeql-db@main
+      id: output-codeql-db
+    - name: Upload CodeQL database  
+      uses: actions/upload-artifact@v2
+      with:
+        name: codeql-database.zip
+        path: ${{ steps.output-codeql-db.outputs.path }}
